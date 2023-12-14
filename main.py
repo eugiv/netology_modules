@@ -1,8 +1,8 @@
 print('start main.py')
 import requests
 
-import application.db.people
-import application.salary
+import application.db.people as ppl
+import application.salary as slr
 from application.clear_db import delete_db  # import is safe because 'if __name__...'
 # contains delete_db call in clear_db.py
 
@@ -16,7 +16,7 @@ def calculate_salary():
 
 
 if __name__ == '__main__':
-    application.salary.calculate_salary()
-    application.db.people.get_employees()
+    slr.calculate_salary()
+    ppl.get_employees()
 
 print('main.py closed')
